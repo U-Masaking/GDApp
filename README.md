@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 名前：GDApp  
+<br />
 
-Things you may want to cover:
+### 概要：  
+就職活動中の学生が使うGD（グループディスカッション）募集アプリ  
+Webアプリ内の掲示板でGDの募集（zoomのurl)を投稿し、そこに他のユーザが参加する。  
+基本的には学生主体でのGD練習を想定して、最低限の機能を兼ね備えたプラットフォームの役割にする。
+<br />
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 機能:  
+* 新規登録
+* ログイン  
+* ログアウト  
+* プロフィール設定  
+* 投稿（GD募集の投稿）  
+* コメント（投稿詳細ページでのコメント） 
+* リマインド（自分が申し込みした募集を確認）  
+* 検索機能（自分が参加したい内容でGDを絞り込む）  
