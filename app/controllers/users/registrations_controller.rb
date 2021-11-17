@@ -50,7 +50,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #新規登録時に名前を保存できるようにする
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     #アカウント編集時にnameを保存できるようにする
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
   end
 
   #新規登録後のリダイレクト先
