@@ -3,10 +3,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
   
-  process resize_to_fit: [200, 200]
-
-  version :thumb do
-    process resize_to_fit: [30, 30]
+  version :icon do
+    process resize_to_fit: [200, 200]
   end
 
   # Choose what kind of storage to use for this uploader:
@@ -20,9 +18,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  # def default_url(*args)
-  #   "default.jpg"
-  # end
+  def default_url(*args)
+    [version_name, "default.jpg"].compact.join('_')
+  end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
