@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "registrations", :media => "all" %>
 
-<div class="card text-center">
+<div class="card text-center new">
   <div class="card-body">
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -8,17 +9,17 @@
       <h2 class="card-title">新規登録</h2>
     
       <div class="field">
-        <%= f.text_field :name, :class => "box", :placeholder => "ユーザー名" %>
+        <%= f.text_field :name, :class => "form-control", :placeholder => "ユーザー名" %>
       </div>
       <div class="field">
-        <%= f.email_field :email, :class => "box", :placeholder => "メールアドレス", autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, :class => "form-control", :placeholder => "メールアドレス", autofocus: true, autocomplete: "email" %>
       </div>
       <div class="field">
-        <%= f.password_field :password, :class => "box", :placeholder => "パスワード", autocomplete: "new-password" %>
+        <%= f.password_field :password, :class => "form-control", :placeholder => "パスワード", autocomplete: "new-password" %>
       </div>
     
       <div class="field">
-        <%= f.password_field :password_confirmation, :class => "box", :placeholder => "パスワード（確認）", autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, :class => "form-control", :placeholder => "パスワード（確認）", autocomplete: "new-password" %>
       </div>
     
       <div class="actions">

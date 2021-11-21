@@ -1,6 +1,4 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
 .jumbotron {
     background-image: image-url('discussion.png');
     background-position: center;
@@ -11,9 +9,10 @@
 }
 .display-3 {
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     color: black;
 }
-.startbtn {
+.start {
+    margin-bottom: 50px;
     width: 150px;
 }
