@@ -1,0 +1,23 @@
+
+// new.html
+$f-margin: 15px 0px;
+.new {
+    .form-control {
+    margin: 30px 0px;
+    }
+}
+.login {
+    margin: $f-margin;
+}
+
+//edit.html
+.edit_field {
+    margin: $f-margin;
+}
+.form-control {
+    margin-top: 5px;
+}
+.update {
+    margin: 20px 0px;
+    width: 100px;
+}

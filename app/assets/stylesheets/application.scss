@@ -10,22 +10,25 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
-.navbar-brand {
-    padding-left: 20px;
+
+.navbar {
+    .navbar-brand {
+        margin-left: 20px;
+    }
+    .nav-item {
+        margin-right: 20px;
+    }
+    .nav-link {
+        margin-left: 20px;
+    }
+    .btn {
+        margin-right: 20px;
+        width: 100px;
+    }
 }
-.btn {
-    margin-right: 20px;
-    width: 100px;
-}
-.nav-item {
-    padding-right: 20px;
-}
-.login-link {
-    margin-left: 20px;
-}
+
 .card {
     margin: 60px;
     margin-left: auto;
@@ -33,20 +36,8 @@
     width: 340px;
     border: 1px solid black;
     border-radius: 10px;
-}
-.card-title {
-    margin: 30px 0px;
-}
-.box {
-    margin: 15px 0px;
-    width: 250px;
-}
-.btn {
-    margin: 15px 0px;
-}
-.registration {
-    margin: 15px 0px;
-}
-.login {
-    margin: 15px 0px;
+
+    .card-title {
+        margin: 30px 0px;
+    }
 }
