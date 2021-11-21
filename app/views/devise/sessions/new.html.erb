@@ -1,4 +1,5 @@
-<%= stylesheet_link_tag "application" %>
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "sessions", :media => "all" %>
 
 <div class="container">
     <div class="card text-center">
@@ -9,11 +10,11 @@
           
           <div class="form-group">
             <div class="field">
-              <%= f.email_field :email, :class => "box", :placeholder => "メールアドレス", autofocus: true, autocomplete: "email" %>
+              <%= f.email_field :email, :class => "form-control", :placeholder => "メールアドレス", autofocus: true, autocomplete: "email" %>
             </div>
           
             <div class="field">
-              <%= f.password_field :password, :class => "box", :placeholder => "パスワード", autocomplete: "current-password" %>
+              <%= f.password_field :password, :class => "form-control", :placeholder => "パスワード", autocomplete: "current-password" %>
             </div>
           </div>
           
@@ -25,7 +26,7 @@
             <% end %>
           
             <div class="actions">
-              <%= f.submit "ログイン", :class => "btn btn-primary" %>
+              <%= f.submit "ログイン", :class => "btn btn-primary sign_in" %>
             </div>
         <% end %>
     

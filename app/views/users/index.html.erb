@@ -1,11 +1,17 @@
+<%= stylesheet_link_tag "application", :media => "all" %>
 <%= stylesheet_link_tag "users", :media => "all" %>
+
 <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="card text-center">
                 <div class="card-body">
                     <h3 class="card-title"><%= @user.name %></h2>
-                    <%= image_tag @user.avatar.icon.url, class: 'avatar' %>
+                    <% if @user.avatar %>
+                        <%= image_tag @user.avatar.icon.url, class: 'avatar' %>
+                    <% else %>
+                        <% image_tag 'default.jpg', class: 'default' %>
+                    <% end %>
                     <p><%= @user.email %></p>
                     <p><%= @user.introduction %></p>
                     <%= link_to "編集", edit_user_registration_path, class: 'post', class: "btn btn-primary edit" %>
