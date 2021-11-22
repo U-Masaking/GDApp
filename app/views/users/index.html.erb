@@ -7,10 +7,10 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h3 class="card-title"><%= @user.name %></h2>
-                    <% if @user.avatar %>
+                    <% if @user.avatar? %>
                         <%= image_tag @user.avatar.icon.url, class: 'avatar' %>
                     <% else %>
-                        <% image_tag 'default.jpg', class: 'default' %>
+                        <%= image_tag 'default.jpg', class: 'default' %>
                     <% end %>
                     <p><%= @user.email %></p>
                     <p><%= @user.introduction %></p>
