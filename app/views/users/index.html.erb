@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="card text-center">
                 <div class="card-body">
-                    <h3 class="card-title"><%= @user.name %></h2>
+                    <h3 class="card-title"><%= @user.name %></h3>
                     <% if @user.avatar? %>
                         <%= image_tag @user.avatar.icon.url, class: 'avatar' %>
                     <% else %>

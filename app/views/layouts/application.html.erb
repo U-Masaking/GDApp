@@ -22,6 +22,9 @@
           <% if user_signed_in? %>
             <ul class="navbar-nav">
               <li class="nav-item">
+                <%= link_to "GD募集", posts_path, :class => "nav-link active" %>
+              </li>
+              <li class="nav-item">
                 <%= link_to "マイページ", users_index_path, :class => "nav-link active" %>
               </li>
               <li class="nav-item">
