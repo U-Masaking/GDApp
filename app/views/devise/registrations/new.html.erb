@@ -11,9 +11,11 @@
       <div class="field">
         <%= f.text_field :name, :class => "form-control", :placeholder => "ユーザー名" %>
       </div>
+
       <div class="field">
         <%= f.email_field :email, :class => "form-control", :placeholder => "メールアドレス", autofocus: true, autocomplete: "email" %>
       </div>
+
       <div class="field">
         <%= f.password_field :password, :class => "form-control", :placeholder => "パスワード", autocomplete: "new-password" %>
       </div>
@@ -31,6 +33,7 @@
       <p><span>--------</span>既に登録されていますか？<span>--------</span></p>
       <%= link_to "ログイン", new_user_session_path %>
     </div>
+    
   </div>
 </div>
 

@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+        avatar: プロフィール画像
+        introduction: プロフィール文
+      post:
+        title: タイトル
+        body: 募集文
+        start_on: 開始時間
+        end_on: 終了時間

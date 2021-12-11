@@ -1,0 +1,58 @@
+
+.index {
+  .title {
+    margin: 50px;
+  }
+  .avatar {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .post {
+    margin: 30px;
+  }
+}
+
+.show {
+  .avatar {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .user-info {
+    margin: 15px;
+  }
+  .post-text {
+    margin: 15px;
+  }
+  .time-info {
+    margin: 15px;
+  }
+  .edit {
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+  .delete {
+    margin-right: 15px;
+  }
+}
+
+.new {
+  .avatar {
+    width: 60px;
+    height: 50px;
+  }
+  .field {
+    margin: 15px 0px;
+  }
+}
+
+.edit {
+  .avatar {
+    width: 60px;
+    height: 50px;
+  }
+  .field {
+    margin: 15px 0px;
+  }
+}
