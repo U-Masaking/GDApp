@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "posts", :media => "all" %>
+
+<div class="container show">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text">
+        <div class="card-body">
+          <div class="user-info">
+            <%= image_tag @post.user.avatar.icon.url, class: "avatar" %>
+            <span class="fw-bold"><%= @post.user.name %></span>
+          </div>
+          <div class="post-text">
+            <h6 class="text-center"><%= @post.title %></h6>
+            <p><%= @post.body %></p>
+          </div>
+          <div class="time-info">
+            <p>時間: <%= @post.start_on.strftime("%-m/%-d(#{$youbi[@post.start_on.wday]}) %-H:%M") %>-<%= @post.end_on.strftime("%-H:%M") %></p>
+          </div>
+          <div class="d-flex w-100 justify-content-between">
+            <% if @post.user = current_user %>
+              <div class="icons">
+                <span class="edit"><%= link_to(content_tag(:i, nil, class: 'far fa-edit'), edit_post_path) %></span>
+                <span class="delete"><%= link_to(content_tag(:i, nil, class: 'far fa-trash-alt'), post_path, method: :delete) %></span>
+              </div>
+            <% end %>
+            <small class="text-muted"><%= @post.created_at.strftime("%-H:%M") %></small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+    </div>
+  </div>
+</div>

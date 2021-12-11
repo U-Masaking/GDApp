@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag "application", :media => "all" %>
+<%= stylesheet_link_tag "posts", :media => "all" %>
+
+<div class="container index">
+  <div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8 text-center">
+    <h2 class="title">募集一覧</h2>
+    <div class="list-group">
+      <% @posts.each do |post| %>
+      <% if post.end_on >= Time.now %>
+        <%= link_to(post_path(post), class: "list-group-item list-group-item-action") do %>
+          <div class="d-flex w-100 justify-content-between">
+            <div class="user-info">
+              <%= image_tag post.user.avatar.icon.url, class: "avatar" %>
+              <%= post.user.name %>
+            </div>
+            <small class="text-muted"><%= post.created_at.strftime("%-H:%M") %></small>
+          </div>
+          <div class="post-title">
+            <p class="fw-bold"><%= post.title %></p>
+          </div>
+          <div class="time-info">
+            <%= post.start_on.strftime("%-m月%-d日(#{$youbi[post.start_on.wday]}) %-H:%M") %>-<%= post.end_on.strftime("%-H:%M") %>
+          </div>
+        <% end %>
+      <% end %>
+      <% end %>
+    </div>
+    <%= link_to '募集作成', new_post_path, :class => 'btn btn-primary btn-lg post' %>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+  </div>
+</div>
