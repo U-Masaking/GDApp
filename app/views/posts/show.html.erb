@@ -19,13 +19,9 @@
           </div>
           <div class="d-flex w-100 justify-content-between">
             <% if @post.user = current_user %>
-              <div class="text-end">
-                <%= link_to edit_post_path, class: "edit" do %>
-                  <i class="far fa-edit"></i>
-                <% end %>
-                <%= link_to post_path, method: :delete, class: "delete" do %>
-                  <i class="far fa-trash-alt"></i>
-                <% end %>
+              <div class="icons">
+                <span class="edit"><%= link_to(content_tag(:i, nil, class: 'far fa-edit'), edit_post_path) %></span>
+                <span class="delete"><%= link_to(content_tag(:i, nil, class: 'far fa-trash-alt'), post_path, method: :delete) %></span>
               </div>
             <% end %>
             <small class="text-muted"><%= @post.created_at.strftime("%-H:%M") %></small>
