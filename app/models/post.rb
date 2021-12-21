@@ -10,13 +10,13 @@ class Post < ApplicationRecord
 
   def start_on_check
     if self.start_on?
-      errors.add(:start_on, "を現在時刻よりあとにしてください") if self.start_on < Time.now
+      errors.add(:start_on, "を現在時刻より後にしてください") if self.start_on < Time.now
     end
   end
 
   def end_on_check
     if self.end_on?
-      errors.add(:end_on, "は開始時間よりあとにしてください") if self.start_on > self.end_on
+      errors.add(:end_on, "は開始時間より後にしてください") if self.start_on > self.end_on
     end
   end
 end

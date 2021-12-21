@@ -11,10 +11,20 @@
           <div class="form-group">
             <div class="field">
               <%= f.email_field :email, :class => "form-control", :placeholder => "メールアドレス", autofocus: true, autocomplete: "email" %>
+              <% if resource.errors.include?(:email) %>
+                <% resource.errors.full_messages_for(:email).each do |msg| %>
+                  <p class="alert"><%= msg %></p>
+                <% end %>
+              <% end %>
             </div>
           
             <div class="field">
               <%= f.password_field :password, :class => "form-control", :placeholder => "パスワード", autocomplete: "current-password" %>
+              <% if resource.errors.include?(:password) %>
+                <% resource.errors.full_messages_for(:password).each do |msg| %>
+                  <p class="alert"><%= msg %></p>
+                <% end %>
+              <% end %>
             </div>
           </div>
           
