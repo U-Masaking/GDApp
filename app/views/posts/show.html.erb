@@ -7,12 +7,16 @@
       <div class="card text">
         <div class="card-body">
           <div class="user-info">
-            <%= image_tag @post.user.avatar.icon.url, class: "avatar" %>
-            <span class="fw-bold"><%= @post.user.name %></span>
+            <% if @post.user.avatar? %>
+              <%= image_tag @user.avatar.icon.url, class: 'avatar' %>
+            <% else %>
+              <%= image_tag 'default.jpg', class: 'default' %>
+            <% end %>
+            <span class="fw-bold"><%= @user.name %></span>
           </div>
           <div class="post-text">
-            <h6 class="text-center"><%= @post.title %></h6>
-            <p><%= @post.body %></p>
+            <h6><%= @post.title %></h6>
+            <p><%= @post.body %></p>P
           </div>
           <div class="time-info">
             <p>時間: <%= @post.start_on.strftime("%-m/%-d(#{$youbi[@post.start_on.wday]}) %-H:%M") %>-<%= @post.end_on.strftime("%-H:%M") %></p>

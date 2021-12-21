@@ -3,48 +3,52 @@
 
 <div class="card text-center edit">
   <div class="card-body">
-    <% if @user.avatar? %>
-      <%= image_tag @user.avatar.icon.url, class: 'avatar' %>
+    <% if @post.user.avatar? %>
+      <%= image_tag @post.user.avatar.icon.url, class: 'avatar' %>
     <% else %>
       <%= image_tag 'default.jpg', class: 'default' %>
     <% end %>
-      <span class="fw-bold"><%= @user.name %></span>
+      <span class="fw-bold"><%= @post.user.name %></span>
     <h2 class="card-title">編集</h2>
-
-    <% if @post.errors.any? %>
-      <div>
-        <ul>
-          <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
 
     <%= form_with model: @post do |form| %>
 
       <div class="field">
         <%= form.label :title %><br />
         <%= form.text_field :title, class: "form-control", :placeholder => "タイトル", size: 30 %>
+        <% if @post.errors.include?(:title) %>
+          <p class="alert"><%= @post.errors.full_messages_for(:title).first %></p>
+        <% end %>
       </div>
 
       <div class="field">
         <%= form.label :body %><br />
         <%= form.text_area :body, class: "form-control", :placeholder => "テキスト", size: "30x10" %>
+        <% if @post.errors.include?(:body) %>
+          <% @post.errors.full_messages_for(:body).each do |msg| %>
+            <p class="alert"><%= msg %></p>
+          <% end %>
+        <% end %>
       </div>
 
       <div class="field">
         <%= form.label :start_on, "開始時間" %>
         <%= form.datetime_field :start_on, class: "form-control" %>
+        <% if @post.errors.include?(:start_on) %>
+          <p class="alert"><%= @post.errors.full_messages_for(:start_on).first %></p>
+        <% end %>
       </div>
 
       <div class="field">
         <%= form.label :end_on, "終了時間" %>
         <%= form.datetime_field :end_on, class: "form-control" %>
+        <% if @post.errors.include?(:end_on) %>
+          <p class="alert"><%= @post.errors.full_messages_for(:end_on).first %></p>
+        <% end %>
       </div>
 
       <div class="field">
-        <%= form.submit %>
+        <%= form.submit nil, class: "btn btn-primary" %>
       </div>
 
     <% end %>

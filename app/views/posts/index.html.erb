@@ -14,7 +14,11 @@
         <%= link_to(post_path(post), class: "list-group-item list-group-item-action") do %>
           <div class="d-flex w-100 justify-content-between">
             <div class="user-info">
-              <%= image_tag post.user.avatar.icon.url, class: "avatar" %>
+              <% if post.user.avatar? %>
+                <%= image_tag post.user.avatar.icon.url, class: 'avatar' %>
+              <% else %>
+                <%= image_tag 'default.jpg', class: 'default' %>
+              <% end %>
               <%= post.user.name %>
             </div>
             <small class="text-muted"><%= post.created_at.strftime("%-H:%M") %></small>
