@@ -16,7 +16,7 @@
           </div>
           <div class="post-text">
             <h6><%= @post.title %></h6>
-            <p><%= @post.body %></p>P
+            <p><%= @post.body %></p>
           </div>
           <div class="time-info">
             <p>時間: <%= @post.start_on.strftime("%-m/%-d(#{$youbi[@post.start_on.wday]}) %-H:%M") %>-<%= @post.end_on.strftime("%-H:%M") %></p>
